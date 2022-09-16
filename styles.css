@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Playfair+Display:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    box-sizing: border-box;
+    position: fixed;
+    padding: 5px 20px;
+    color: white;
+    width: 100%;
+    font-family: 'Playfair Display', serif;
+    border-bottom: 1px solid grey;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    background-color: none;
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    width: 60%;
+}
+.burger{
+    display: none;
+}
+
+.burger div{
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+    transform: all 0.3s ease;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 5px;
+    font-family: 'Nanum Gothic', sans-serif;
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 2rem;
+    font-size: 2rem;
+}
+.span{
+    color: white;
+    background-color: grey;
+    border: none;
+    border-radius: 5px;
+}
+.main{
+    height: 100%;
+    width: 100%;
+}
+
+.bg{
+    background: url(img/bg.jpg) no-repeat center;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+
+@media screen and (max-width: 750px){
+    .navbar{
+        font-size: 0.9rem;
+    }
+    .logo{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    body{
+        overflow: hidden;
+    }
+    .list{
+        position: absolute;
+        right: 0px;
+        height: calc(100vh - 5rem);
+        top: 5rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction:column;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 750ms ease-in;
+        font-size: 0.75rem;
+    }
+    .lastlink{
+        padding: 0px 0px 400px 0px;
+    }
+    
+    .list::before{
+        opacity: 0;
+    }
+    
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+    .true{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes listfade {
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+    transition: all 0.25s ease-in;
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-6px, -7px);
+    transition: all 0.25s ease-in;
+}
